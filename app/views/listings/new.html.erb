@@ -1,0 +1,27 @@
+<h1>Create Listing</h1>
+
+<%= form_with model: @listing do |form| %>
+    <div>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+    </div>
+  
+    <div>
+      <%= form.label :price %><br>
+      <%= form.text_area :price %>
+    </div>
+
+    <div>
+    <%= form.label :age %><br>
+    <%= form.text_area :age %>
+  </div>
+  <div>
+  <%= form.label :description %><br>
+  <%= form.text_area :description %>
+</div>
+
+  
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
