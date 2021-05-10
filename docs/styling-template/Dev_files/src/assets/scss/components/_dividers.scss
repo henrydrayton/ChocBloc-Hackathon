@@ -1,0 +1,83 @@
+.divider {
+    position: relative;
+    border: 0;
+    width: 100%;
+  }
+  
+  .divider-md {
+    width: 60%;
+  }
+  
+  .divider-sm {
+    width: 40%;
+  }
+  
+  .divider-icon {
+    height: 20px;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle fill='none' stroke='%23d1dbe7' stroke-width='1' cx='10' cy='10' r='7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  
+    &:before, &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      max-width: calc(50% - (50px / 2));
+      width: 100%;
+      border-bottom: 1px solid $border-color;
+    }
+  
+    &:before {
+      right: calc(50% + (50px / 2));
+    }
+  
+    &:after {
+      left: calc(50% + (50px / 2));
+    }
+  }
+  
+  .divider-icon-fade {
+    &:before, &:after {
+      border: 0;
+      height: 1px;
+    }
+  
+    &:before {
+      background: radial-gradient(ellipse at right, $border-color 0, rgba(255, 255, 255, 0) 75%);
+    }
+  
+    &:after {
+      background: radial-gradient(ellipse at left, $border-color 0, rgba(255, 255, 255, 0) 75%);
+    }
+  }
+  
+  .divider-fade {
+    &:before {
+      content: '';
+      display: block;
+      width: 80%;
+      position: relative;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 1px;
+      background: radial-gradient(ellipse at center, $border-color 0, rgba(255, 255, 255, 0) 75%);
+    }
+  
+    &.divider-dark:before {
+      background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.2) 0, rgba(31, 45, 61, 0) 75%);
+    }
+  }
+  
+  .divider-vertical {
+    width: 1px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border-left: 1px solid $border-color;
+  }
+  
+  .divider-vertical-fade {
+    border: 0;
+    background: radial-gradient(ellipse at center, $border-color 0, rgba(255, 255, 255, 0) 75%);
+  }

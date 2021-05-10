@@ -1,0 +1,8 @@
+Introduction
+How to get started with MarketSpot Template!
+
+This guide will help you get started with MarketSpot! 
+All the important stuff – compiling the source, file structure, build tools, file includes – is documented here, but should you have any questions, 
+always feel free to reach out to info@codenpixel.com or use profile page for purchace verification https://themeforest.net/user/codenpixel
+
+To view template documentation,please go to template files and open documentation.html or go from navigation --> page --> documentation 

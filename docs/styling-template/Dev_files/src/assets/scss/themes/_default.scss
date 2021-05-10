@@ -1,0 +1,326 @@
+
+/* -----------------------------------
+:: Warp and add bottom spacing
+-------------------------------------- */
+
+.wrapper {
+    padding-bottom: $spacer *4;
+}
+
+
+
+/* -----------------------------------
+::  Navigation links style class
+------------------------------------ */
+
+.nav-link-style {
+  color: $link-color;
+  > i {
+    margin-top: -.125rem;
+    vertical-align: middle;
+  }
+  &:hover { color: $link-hover-color; }
+}
+.active > .nav-link-style,
+.nav-link-style.active {
+  color: $link-color;
+}
+.nav-link-style.nav-link-light {
+  color: $link-color;
+  &:hover { color: $link-hover-color; }
+}
+.active > .nav-link-style.nav-link-light,
+.nav-link-style.nav-link-light.active {
+  color: $link-color;
+}
+
+
+
+/* ------------------------------------
+:: Jumbotron - Home page
+------------------------------------- */
+.intro-2 {
+  padding: 75px 45px;
+  margin: $spacer *2 auto $spacer *2;
+  @include border-radius($border-radius-lg * 3);
+  position: relative;
+  background-color: $soft-green;
+}
+
+
+.intro-2 .intro-title {
+  @include font-size(4.5rem);
+}
+
+.sidebar-widget {
+  padding: 25px 20px;
+  border: $border-width solid $border-color;
+  margin-bottom: $spacer * 1.5;
+  @include border-radius($border-radius);
+}
+
+.sidebar-widget-title--sm {
+  display: block;
+  font-weight: 700;
+  color: $text-color;
+  margin-bottom: 10px;
+}
+
+.sidebar-widget ul li {
+  font-size: 15px;
+  line-height: 28px;
+  padding: 0;
+  padding-left: 5px;
+  list-style: none;
+  font-weight: 600;
+}
+
+.breadcrumb {
+
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+  background-color: transparent;
+}
+.breadcrumb-item a {
+  color: $text-color;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+  display: inline-block;
+  padding-right: 0;
+  color: $text-color;
+  content: "/";
+  margin-right: 5px;
+}
+
+/* -----------------------------------
+:: Slider - Single item page
+------------------------------------ */
+.swiper-container {
+  width: 100%;
+  height: 500px;
+}
+@include media-breakpoint-between(xs, md) {
+  .swiper-container {
+    width: 100%;
+    height: 250px;
+  }
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.swiper-slide img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  border-radius: $border-radius;
+  
+  
+}
+
+/* -----------------------------------
+:: Demo bar - single item page
+------------------------------------ */
+@include media-breakpoint-between(xs, md) {
+  .demo-bar p {
+      text-align: center;
+      margin:15px 0!important;
+  }
+}
+
+// search links 
+.search-links .nav-link {
+  font-size: $font-size-sm;
+  padding: $input-btn-padding-y-sm $input-btn-padding-x-sm;
+  color: $link-color;
+  font-weight: $font-weight-normal;
+  &:hover  {
+      color: $link-hover-color;
+  }
+}
+
+/* -----------------------------------
+:: Refine search -- Home page
+------------------------------------ */
+.refine-search-wrap .card {
+  margin-bottom: $spacer *1.5;
+  transition: $transition-collapse
+}
+
+/* -----------------------------------
+:: Clients logos -- Home page
+------------------------------------ */
+.client-logos-1 img {
+max-width: 120px;
+}
+@include media-breakpoint-between(md, lg) {
+  .client-logos-1 img {
+      max-width: 80px;
+  }
+}
+@include media-breakpoint-down(sm) {
+  .client-logos-1 img {
+      max-width: 50px;
+  }
+}
+
+/* -----------------------------------
+:: Dashboard nav -- Dash
+------------------------------------ */
+.dash-nav li {
+  padding: 9px 0;
+  & a {
+      color: $body-color;
+      
+      padding: 0;
+      &.active h6,&.active i {color:$primary;}
+      & i {
+          font-size: $font-size-lg;
+          margin-right: 8px;
+          color: $body-color;
+      }
+      
+  }
+    &:hover a {
+        color: $link-hover-color
+    } 
+    
+}
+
+/* -----------------------------------
+::  Dashboard - add item form
+------------------------------------ */
+
+.add-item-remove-img {
+    top: 10px;
+    right: 20px;
+    font-size: $font-size-sm;
+    color: $body-color;
+}
+
+
+.box-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: $border-radius;
+    margin: 0 auto 20px;
+    & i {
+        font-size: $font-size-lg;
+    }
+}
+
+/* -----------------------------------
+::  Faq nav
+------------------------------------ */
+
+.section-nav {
+    padding-left: 0;
+    border-right: 1px solid $border-color;
+    list-style-type: none;
+
+    li {
+        padding-right: 1rem;
+        padding: 4px 0;
+
+        a {
+            color: $body-color;
+            padding-left: 9px;
+            transition: all .3s;
+            &:hover {
+              color: $link-hover-color;
+            }
+           
+        }
+
+        a.active {
+          color: $link-hover-color;
+          border-left: $border-width *3 solid $primary;
+
+      }
+
+        ul {
+            display: block;
+            padding: .125rem 1.5rem;
+            list-style-type: none;
+        }
+    }
+}
+
+
+/* -----------------------------------
+::  Card Testimonial - Home page
+------------------------------------ */
+.customer-review-section {
+    position: relative;
+    background: $soft-green;
+    @include border-radius($border-radius-lg * 3);
+    .h2 {
+        @include font-size(2rem);  
+    }
+}
+
+
+.testimonial-block {
+  clear: both;
+  margin: 0;
+  padding: 0 0 25px 25px;
+  line-height: 1.4;
+    @include font-size(2rem);
+  footer {
+      display: block;
+      margin: 30px 0 0;
+      font-weight: normal;
+      font-size: 20px;
+  }
+  cite {
+      font-style: normal;
+  }
+}
+
+.testimonial-quote {
+  float: left;
+  margin: 10px 0 0 -25px;
+  svg {
+      display: block;
+      width: 13px;
+      height: 10px;
+      fill: #fff;
+  }
+}
+
+
+/*------------------------------------
+  Callout
+------------------------------------*/
+.callout {
+  border-left-width: 4px;
+  border-left-style: solid;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.callout p:last-child {
+  margin-bottom: 0;
+}
+.callout-title {
+  color: initial;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: .5rem;
+}
+
+
+

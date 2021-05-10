@@ -1,0 +1,227 @@
+
+
+// Add additional rounded corner sizes
+.rounded-lg {
+  border-radius: $border-radius *3;
+}
+
+.o-hidden{
+    overflow: hidden;
+}
+
+.no-arrow:after {
+  display: none;
+}
+.border-dark {
+  border-color: $border-color-dark;
+}
+
+
+.row.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row.display-flex > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
+
+// Sticky Top
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        .sticky-#{$breakpoint}-top{
+            position: sticky !important;
+            top: 80px; // If navigation fixed top not used,reduce this value to 20px
+            z-index: $zindex-sticky;
+        }
+        [class*='sticky-#{$breakpoint}'][class*='-top']{
+            &[class*='col']{
+                top: $spacer*1.5;
+            }
+        }
+    }
+}
+
+// Background Images
+
+.bg-image{
+    &:not([class*='absolute']){
+      position: absolute;
+    }
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    + .card-body{
+      position: relative;
+      z-index: 1;
+    }
+  }
+  
+  img.bg-image{
+    object-fit: cover;
+  }
+
+// Opacity
+// Control an element's opacity using the class .opacity-# element with value of 0 - 100
+
+.opacity-0 {
+    opacity: 0;
+  }
+  
+  @for $i from 1 through 9 {
+    $opacity: ($i / 10);
+    .opacity-#{($i*10)} {
+      opacity: $opacity;
+    }
+  }
+
+
+
+
+// Height
+//
+// Control an elements min-height in vh units using the class .height-# with a value of 0 - 90
+
+.h-0 {
+    height: 0;
+  }
+  
+  @for $i from 1 through 9 {
+    $height: ($i * 10);
+    .min-vh-#{$height} {
+      min-height: #{$height}vh;
+    }
+  }
+  
+  @include media-breakpoint-up(md){
+    @for $i from 1 through 10 {
+      $height: ($i * 10);
+      .min-vh-md-#{$height} {
+        min-height: #{$height}vh;
+      }
+    }
+  }
+  
+  @include media-breakpoint-up(lg){
+    @for $i from 1 through 10 {
+      $height: ($i * 10);
+      .min-vh-lg-#{$height} {
+        min-height: #{$height}vh;
+      }
+    }
+  }
+
+  
+// Height
+
+img{
+    &.h-100{
+        object-fit: cover;
+    }
+    &.flex-fill{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+}
+
+.img-fluid{
+  &.position-relative{
+    z-index: 1;
+  }
+}
+
+// Width
+
+@include media-breakpoint-up(lg){
+  .w-lg-100{
+    width: 100%;
+  }
+}
+
+// Hover Effects
+
+[class*='hover-']{
+  transition: $transition-base;
+}
+
+.hover-fade-out{
+    &:hover{
+        opacity: .75;
+    }
+}
+
+.hover-box-shadow{
+  &:hover{
+    box-shadow: $box-shadow;
+      transform: translateY(-$spacer * 0.3);
+  }
+}
+
+// Alignment
+
+.top{
+  top: 0;
+  bottom: auto;
+}
+
+.bottom{
+  top: auto;
+  bottom: 0;
+}
+
+.left{
+  right: auto;
+  left: 0;
+}
+
+.right{
+  left: auto;
+  right: 0;
+}
+
+// Borders
+
+.border-thick{
+  border-width: $border-width*4 !important;
+}
+
+
+
+@include media-breakpoint-up(lg){
+  .border-lg-right{
+    border-right: $border-width solid $border-color;
+  }
+}
+.dropdown-toggle.no-arrow::after {
+  display: none;
+}
+
+
+.img-lg {
+  width: 92px;
+  height: 92px;
+}
+.img-sm {
+  width: 43px;
+  height: 43px;
+}
+.img-xs {
+  width: 37px;
+  height: 37px;
+}
+.img-ss {
+  width: 26px;
+  height: 26px;
+}
+
+/* Badge fix */
+.badge {
+    vertical-align: middle;
+}
+
+
+

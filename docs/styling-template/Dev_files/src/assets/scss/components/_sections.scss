@@ -1,0 +1,49 @@
+.section {
+    position: relative;
+    padding-top: $spacer * 4;
+    padding-bottom: $spacer * 4;
+}
+@include media-breakpoint-down(sm) {
+    .section {
+        position: relative;
+        padding-top: $spacer * 2;
+        padding-bottom: $spacer * 2;
+    }
+}
+.section-top {
+    padding-top: $spacer * 4; 
+}
+.section-top-lg {
+    padding-top: $spacer * 6; 
+}
+
+.section-xl {
+    padding-top: $spacer * 8;
+    padding-bottom: $spacer * 8;
+}
+
+.section-lg {
+    padding-top: $spacer * 6;
+    padding-bottom: $spacer * 6;
+}
+
+.section-sm {
+    padding-top: $spacer * 2;
+    padding-bottom: $spacer * 2;
+}
+@include media-breakpoint-down(sm) {
+    .section-sm {
+        position: relative;
+        padding-top: $spacer * 1;
+        padding-bottom: $spacer * 1;
+    }
+}
+
+
+// Hero sections
+.section-hero {
+    @include media-breakpoint-up(md) {
+        min-height: 500px;
+    }
+}
+

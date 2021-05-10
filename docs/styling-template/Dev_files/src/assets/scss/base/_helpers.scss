@@ -1,0 +1,31 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+/**
+ * Clear inner floats
+ */
+
+ p::selection {
+  background: $primary;
+  color: white;
+}
+
+p::-moz-selection {
+  background: $primary;
+  color: white;
+}
+
+
+.clearfix::after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.icon-none:after {
+  display: none;
+}
+.text-inverse h3,.text-inverse p {
+  color: white;
+}

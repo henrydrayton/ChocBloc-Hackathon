@@ -1,0 +1,19 @@
+// ------------------------------------------------------------------------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.I placed all styles here.Best to remove or seperate styles to sections
+// ------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+.intro {
+    padding-top: $spacer *2;
+    padding-bottom: $spacer *2;
+}
+
+
+
+.dropdown-menu li {
+    padding: 3px 10px;
+}
+.dropdown-menu li a {
+    color: $text-color;
+}

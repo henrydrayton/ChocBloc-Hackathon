@@ -1,0 +1,55 @@
+@charset 'UTF-8';
+
+// 0. Import Boubon
+@import 'bourbon';
+
+// 1. Configuration and helpers
+@import
+  'abstracts/variables',
+  'abstracts/user-variables',
+  'abstracts/functions';
+
+// 2. Vendors
+@import
+
+  'vendors/bootstrap',
+    'abstracts/mixins';    ;
+
+// 3. Base stuff
+@import
+  'base/typography',
+  'base/base',
+  'base/fonts',
+  'base/helpers';
+
+// 4. Layout-related sections
+@import
+  'layout/header',
+  'layout/pricing',
+  'layout/footer';
+
+// 5. Components
+// Components
+@import
+    'components/button',
+    'components/utilities',
+    'components/dividers',
+    'components/cards',
+    'components/navbar',
+    'components/tabs',
+    'components/accordions',
+    'components/dropdown',
+    'components/pagination',
+    'components/forms',
+    'components/sections';
+
+// 6. Page-specific styles
+@import
+  'pages/blog',
+  'pages/home';
+
+// 7. Themes
+@import 'themes/default';
+
+
+ 

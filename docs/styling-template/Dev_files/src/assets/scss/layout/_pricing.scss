@@ -1,0 +1,30 @@
+.pricing-v1,.pricing-v2 {
+    overflow: hidden;
+}
+
+.pricing-v1::before {
+    content: "";
+    position: absolute;
+    width: 54%;
+    height: 84%;
+    top: 50%;
+    left: 55%;
+    background: url(../../assets/img/bg-carrer.png) 0 0 repeat;
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+    background-size: cover;
+    z-index: 9999;
+}
+.pricing-v2::before {
+    content: "";
+    position: absolute;
+    width: 54%;
+    height: 55%;
+    top: -20%;
+    left: 62%;
+    background: url(../../assets/img/bg-carrer.png) 0 0 repeat;
+    -webkit-transform: rotate(2deg);
+    transform: rotate(210deg);
+    background-size: cover;
+    z-index: 9999;
+}

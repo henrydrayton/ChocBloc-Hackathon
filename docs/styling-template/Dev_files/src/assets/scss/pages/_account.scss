@@ -1,0 +1,8 @@
+.nav-pills .nav-link {
+    border-radius: $border-radius;
+    color: $body-color;
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: $dark;
+    background-color:$light;
+}

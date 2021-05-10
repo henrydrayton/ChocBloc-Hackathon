@@ -1,0 +1,160 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+
+// Contextual backgrounds
+
+// [converter] $parent hack
+@mixin bg-variant($parent, $color) {
+    #{$parent} {
+        background-color: $color;
+    }
+    a#{$parent}:hover,
+    a#{$parent}:focus {
+        background-color: darken($color, 10%);
+    }
+}
+
+
+@mixin badge-variant($bg) {
+    color: color-yiq($bg);
+    background-color: $bg;
+
+    &[href] {
+        @include hover-focus {
+            color: color-yiq($bg);
+            text-decoration: none;
+            background-color: darken($bg, 7%);
+        }
+    }
+}
+
+
+// Social buttons hover
+
+@mixin social-btn-hover($color) {
+    &:hover {
+        border-color: rgba($color, .3);
+        color: $color;
+    }
+}
+
+
+// Override default Bootstrap List Groups mixin
+
+@mixin list-group-item-variant-custom($state, $background, $color) {
+    .list-group-item-#{$state} {
+        color: $color;
+        background-color: $background;
+
+        &.list-group-item-action {
+            @include hover-focus {
+                color: darken($color, 8%);
+                background-color: darken($background, 3%);
+            }
+        }
+    }
+}
+
+
+
+/// Make a context based selector a little more friendly
+/// @param {String} $context
+@mixin when-inside($context) {
+    #{$context} & {
+        @content;
+    }
+}
+
+
+@mixin svgColor($color){
+    [stroke]:not([stroke="none"]){
+        stroke: $color;
+    }
+    [fill]:not([fill="none"]){
+        fill: $color;
+    }
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+
+@for $i from 1 through 9 {
+    $opacity: ($i / 10);
+    .opacity-#{($i*10)} {
+        opacity: $opacity;
+    }
+}
+
+
+// Alerts
+
+@mixin alert-variant($background, $border, $text-color) {
+    color: $text-color;
+    background-color: $background;
+    border-color: $border;
+
+    hr {
+        border-top-color: darken($border, 4%);
+    }
+
+    .alert-link {
+        color: darken($text-color, 7%);
+    }
+}
+
+
+
+
+// buttons
+
+@mixin btn-soft-variant($parent, $color) {
+    #{$parent} {
+        background-color: $color !important;
+        
+    }
+}
+
+
+
+// Badge soft colors
+@each $color,$value in $theme-colors {
+    .badge-soft-#{$color} {
+        background-color: rgba($value, 0.15);
+}
+}
+
+// Buttons soft colors
+@each $color,$value in $theme-colors {
+    .btn-#{$color}-alt {
+        background-color: rgba($value, 0.15);
+}
+}
+
+// Buttons soft colors
+@each $color,$value in $theme-colors {
+    .alert-soft-#{$color} {
+        background-color: rgba($value, 0.15);
+        
+}
+}
+
+// Brands
+
+@each $color,
+    $value in $brand-colors {
+        @include bg-variant(".bg-brand-#{$color}", $value);
+}
+
+
+
+
+// Alt colors
+@each $color,$value in $theme-colors {
+        .bg-#{$color}-alt {
+            background-color: rgba($value, 0.13);
+}
+}
+
