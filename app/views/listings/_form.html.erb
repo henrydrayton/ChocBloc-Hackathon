@@ -1,66 +1,62 @@
-<div class="container" p-3 my-3 border>
-
-<%= form_with model: listing do |form| %>
-<div class="form-group mb-3">
-    <div id="error_explanation">
-        <%#= form.label :name #%><br>
-        <h4 class="col-md-6 order-md-6" for="listingName">Listing Name</h4>
+<div class="container d-flex text-center justify-content-center align-items-center" p-3 my-3 border>
+  <%= form_with model: listing do |form| %>
+    <div class="form-group py-2">
+      <div class="field">
+        <h4><%= form.label :name %></h4>
         <%= form.text_field :name, {class:"form-control", placeholder: "Enter name"}%>
         <% listing.errors.full_messages_for(:name).each do |message| %>
         <div><%= message %></div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
-  </div>
 
-  <div class="form-group" >
-  <div class="field mb-3">
-    <%= form.label :price%><br>
-    <%= form.text_area :price, {class:"form-control", placeholder: "Enter price"}%><br>
-    <% listing.errors.full_messages_for(:price).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-  </div>
+    <div class="form-group py-2">
+      <div class="field">
+        <h4><%= form.label :price %></h4>
+        <%= form.text_field :price, {class:"form-control", placeholder: "Enter price"}%>
+        <% listing.errors.full_messages_for(:price).each do |message| %>
+          <div><%= message %></div>
+        <% end %>
+      </div>
+    </div>
 
-  <div class="field mb-3">
-    <%= form.label :age %><br>
-    <%= form.text_area :age, {class:"form-control", placeholder: "Enter age"}%><br>
-    <% listing.errors.full_messages_for(:age).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
+    <div class="form-group py-2">
+      <div class="field">
+        <h4><%= form.label :age %></h4>
+        <%= form.text_field :age, {class:"form-control", placeholder: "Enter age"}%>
+        <% listing.errors.full_messages_for(:age).each do |message| %>
+          <div><%= message %></div>
+        <% end %>
+      </div>
+    </div>
 
-  <div class="field mb-3">
-  <%= form.label :description %><br>
-  <%= form.text_area :description, {class:"form-control", placeholder: "Enter description"}%><br>
-  <% listing.errors.full_messages_for(:description).each do |message| %>
-    <div><%= message %></div>
+    <div class="form-group py-2">
+      <div class="field">
+      <h4><%= form.label :description %></h4>
+      <%= form.text_area :description, {class:"form-control", placeholder: "Enter description"}%>
+      <% listing.errors.full_messages_for(:description).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+      </div>
+    </div>
+
+    <div class="form-group py-3">
+      <div class= "custom-file">
+          <h4><%= form.label :image %></h4>
+          <%= form.file_field :image %>
+      </div>
+    </div>
+      <div class="actions py-3">
+        <% if current_page? new_listing_path%>
+            <%= form.submit "Submit", class: "btn btn-primary btn-lg btn-block" %>
+        <% else %>
+            <%= form.submit "Save Changes", class: "btn btn-primary btn-lg btn-block" %>
+        <% end %>
+      </div>
   <% end %>
-  </div>
-
-<div class= "custom-file mb-3"
-  <div class="field">
-      <%= form.label :image %>
-      <%= form.file_field :image %>
-  </div>
-  </div>
-
-  
-  <div class="actions">
-    <%= form.submit "Create Listing", class: "btn btn-primary btn-lg btn-block" %>
-  </div>
-<% end %>
 </div>
 
-<hr class="mb-4">
-
-          
-<footer class="my-5 pt-5 text-muted text-center text-small">
-<p class="mb-1">&copy; 2021 ChocBloc</p>
-<ul class="list-inline">
-  <li class="list-inline-item"><a href="#">Privacy</a></li>
-  <li class="list-inline-item"><a href="#">Terms</a></li>
-  <li class="list-inline-item"><a href="#">Support</a></li>
-</ul>
+<hr class="mb-2">          
+<footer class="my-3 pt-3 text-muted text-center text-small">
+  <p>&copy; 2021 ChocBloc</p>
 </footer>
-</div>
