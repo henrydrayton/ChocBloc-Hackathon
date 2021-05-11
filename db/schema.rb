@@ -36,5 +36,4 @@ ActiveRecord::Schema.define(version: 2021_05_11_013245) do
     t.index ["login_id"], name: "index_users_on_login_id"
   end
 
-  add_foreign_key "users", "logins"
 end
