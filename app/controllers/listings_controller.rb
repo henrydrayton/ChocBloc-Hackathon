@@ -1,12 +1,12 @@
 class ListingsController < ApplicationController
-  before_action :require_login, except: [:index, :show]
+  before_action :require_login, except: %i[index show]
+  before_action :set_listing, only: %i[show edit update destroy]
   
     def index
-        @listings = Listing.all.reverse
+        @listings = Listing.all.with_attached_image
     end
 
     def show 
-      @listing = Listing.find(params[:id])
     rescue 
       redirect_to root_path
     end
@@ -31,12 +31,9 @@ class ListingsController < ApplicationController
     end
 
     def edit
-      @listing = Listing.find(params[:id])
     end
 
     def update
-      @listing = Listing.find(params[:id])
-  
       if @listing.update(listing_params)
         redirect_to @listing
       else
@@ -45,7 +42,7 @@ class ListingsController < ApplicationController
     end
 
     def destroy
-      @listing = Listing.find(params[:id])
+      @listing.image.purge
       @listing.destroy
   
       redirect_to root_path
@@ -53,6 +50,10 @@ class ListingsController < ApplicationController
 
 
   private
+    def set_listing
+      @listing = Listing.find(params[:id]) 
+    end
+
     def require_login
       unless authenticate_user!
         flash[:error] = "You must be logged in to access this section"

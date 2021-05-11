@@ -6,8 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-%w[users listings active_storage_blobs active_storage_attachments].each do |table|
+Listing.all.each { |listing| listing.image.purge }
+
+%w[users listings].each do |table|
   ActiveRecord::Base.connection.execute("TRUNCATE TABLE #{table} RESTART IDENTITY CASCADE;")
+end
+
+Dir.glob(Rails.root.join('storage', '**', '*').to_s).sort_by(&:length).reverse.each do |x|
+  if File.directory?(x) && Dir.empty?(x)
+    Dir.rmdir(x)
+  end
 end
 
 users = [{
@@ -59,18 +67,18 @@ users = [{
 users.each { |user| User.create!(user) }
 
 choc_details = {
-  "Sweet Chocolate" => "The sweetest chocolate money can buy (:",
-  "White Chocolate" => "Just milk and sugar lying about being chocolate.",
-  "Dark Chocolate" => "Lighten up, dude!",
-  "Gourmet Chocolate" => "The good stuff!",
-  "Fine Chocolate" => "Only the finest!",
-  "Assorted Chocolates" =>  "An endless selection :D",
-  "Strong Chocolate" => "This one's been hitting the gym.",
-  "Coffee Chocolate" => "When you need that extra hit!",
-  "Sour Chocolate" => "Something for the adventurous!",
+  "Sweet Chocolate" => "The sweetest chocolate money can buy - You're sure to win someone over with these (:",
+  "White Chocolate" => "Just milk and sugar lying about being chocolate. It makes me physically angry.",
+  "Dark Chocolate" => "Lighten up, my guy - Your best days are ahead of you yet!",
+  "Gourmet Chocolate" => "This is the real deal, but you'd better have deep pockets.",
+  "Fine Chocolate" => "Only the finest for the finest. This fine collection could get you fined for being so damn fine.",
+  "Assorted Chocolates" =>  "An endless selection - you never know what you're gonna get.",
+  "Strong Chocolate" => "This one's been hitting the gym. Recommend proceeding with caution.",
+  "Coffee Chocolate" => "When you need that extra hit.. maybe just before the final hours of your hackathon.",
+  "Sour Chocolate" => "Something for the adventurous - for when normal chocolate just doesn't do it anymore.",
   "Gummy Bear" => "How did this get in here?",
-  "Party Chocolate" => "Your friends will love you - even more!",
-  "Chocolate Factory" => "Comes with a family of Oompa Loompas."
+  "Party Chocolate" => "Something for everyone - this is for the people. Be careful you might just end up a little too popular.",
+  "Chocolate Factory" => "Comes with a family of Oompa Loompas, a young heir with a good heart, and an extremely lazy grandpa."
 }
 
 choc_details.each_with_index do |(choc_name, choc_desc), index|

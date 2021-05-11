@@ -1,0 +1,16 @@
+.img-fit {
+  object-fit: cover;
+  height: 15vw;
+}
+
+.card-body {
+  height: 10vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-text {
+  display: flex;
+  flex-basis: auto;
+  flex-grow: 1;
+}

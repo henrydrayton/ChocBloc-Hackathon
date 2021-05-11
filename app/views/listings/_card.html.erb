@@ -1,0 +1,17 @@
+<% listings.each do |listing| %>
+    <div class="col-md-4">
+        <div class="card mb-4 box-shadow">
+        <img class="card-img-top img-fit" src= "<%= url_for(listing.image) %>" alt= "<%= listing.name %>">
+        <div class="card-body">
+            <h4><%= listing.name %></h4>
+            <p class="card-text"><%= "#{listing.description[0...150].strip}#{"..." if listing.description.size > 150}" %></p>
+            <div class="d-flex justify-content-between align-items-center mt-auto">
+            <div class="btn-group">
+                <%= button_to "View", listing_path(listing.id), {class: "btn btn-sm btn-outline-secondary", method: "get"} %>
+            </div>
+            <small class="text-muted"><%= listing.user[:first_name] %></small>
+            </div>
+        </div>
+        </div>
+    </div>
+<% end %>
