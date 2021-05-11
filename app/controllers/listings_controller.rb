@@ -14,7 +14,7 @@ class ListingsController < ApplicationController
     
       def create
         @listing = Listing.new(listing_params)
-    
+        
         if @listing.save
           redirect_to @listing
         else
@@ -47,6 +47,5 @@ class ListingsController < ApplicationController
       private
       def listing_params
         params.require(:listing).permit(:name, :price, :age, :description, :image)
-      end
-  
-end
+      end   
+  end
