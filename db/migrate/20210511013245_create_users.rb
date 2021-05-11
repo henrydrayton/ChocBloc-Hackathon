@@ -5,7 +5,6 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :last_name
       t.integer :mobile
       t.string :address
-      t.references :login, null: false, foreign_key: true
 
       t.timestamps
     end
