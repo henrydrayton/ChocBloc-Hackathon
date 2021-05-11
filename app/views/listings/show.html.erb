@@ -1,6 +1,7 @@
 
 
 <h3><%= @listing.name %></h3>
+<%= image_tag url_for(@listing.image), class: 'listing'%>
 <h4><%= @listing.price %></h4>
 <h4><%= @listing.age %></h4>
 <h4><%= @listing.description %></h4>

@@ -7,7 +7,12 @@
         <div><%= message %></div>
       <% end %>
     </div>
-  
+
+    <div class= "field">
+        <%= form.label :image %>
+        <%= form.file_field :image %>
+    </div>
+
     <div>
       <%= form.label :price %><br>
       <%= form.text_area :price%><br>
