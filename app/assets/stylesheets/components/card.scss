@@ -4,7 +4,7 @@
 }
 
 .card-body {
-  height: 10vw;
+  height: 12em;
   display: flex;
   flex-direction: column;
 }
@@ -13,4 +13,5 @@
   display: flex;
   flex-basis: auto;
   flex-grow: 1;
+  overflow: hidden;
 }
