@@ -7,8 +7,6 @@ class ListingsController < ApplicationController
     end
 
     def show 
-    rescue 
-      redirect_to root_path
     end
 
     def new
@@ -51,7 +49,9 @@ class ListingsController < ApplicationController
 
   private
     def set_listing
-      @listing = Listing.find(params[:id]) 
+      @listing = Listing.find(params[:id])
+    rescue 
+      redirect_to root_path
     end
 
     def require_login
