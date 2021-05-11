@@ -4,22 +4,13 @@
         <p class="lead">Please provide your listing details below:</p>
       </div>
 
-        <div class="col-md-8 order-md-1">
-          <h4 class="mb-3">Listing Name</h4>
+        <div class="col-md-6 order-md-6">
+          <h4 class="mb-3" for="listingName">Listing Name</h4>
           <form class="needs-validation" novalidate>
             <div class="row">
-              <div class="col-md-6 mb-3">
-                <label for="firstName">First name</label>
-                <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                <input type="text" class="form-control" id="listingName" placeholder="" value="" required>
                 <div class="invalid-feedback">
-                  Valid first name is required.
-                </div>
-              </div>
-              <div class="col-md-6 mb-3">
-                <label for="lastName">Last name</label>
-                <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-                <div class="invalid-feedback">
-                  Valid last name is required.
+                  Valid name is required.
                 </div>
               </div>
             </div>
@@ -163,44 +154,4 @@
       </footer>
     </div>
 
-<%= form_with model: @listing do |form| %>
-    <div>
-      <%= form.label :name %><br>
-      <%= form.text_field :name %>
-      <% @listing.errors.full_messages_for(:name).each do |message| %>
-
-        <div><%= message %></div>
-        <% end %>
-    </div>
-  
-    <div>
-      <%= form.label :price %><br>
-      <%= form.text_area :price %>
-      <% @listing.errors.full_messages_for(:price).each do |message| %>
-
-        <div><%= message %></div>
-        <% end %>
-    </div>
-
-    <div>
-    <%= form.label :age %><br>
-    <%= form.text_area :age %>
-    <% @listing.errors.full_messages_for(:age).each do |message| %>
-
-        <div><%= message %></div>
-        <% end %>
-  </div>
-  <div>
-  <%= form.label :description %><br>
-  <%= form.text_area :description %>
-  <% @listing.errors.full_messages_for(:description).each do |message| %>
-
-    <div><%= message %></div>
-    <% end %>
-</div>
-
-  
-    <div>
-      <%= form.submit %>
-    </div>
-  <% end %>
+<%= render "listings/form", listing: @listing %>
