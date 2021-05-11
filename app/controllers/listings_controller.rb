@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
     def index
-        @listings = Listing.all
+        @listings = Listing.all.reverse
     end
 
     def show 
@@ -20,6 +20,28 @@ class ListingsController < ApplicationController
           render :new
         end
       end
+
+      def edit
+        @listing = Listing.find(params[:id])
+      end
+
+      def update
+        @listing = Listing.find(params[:id])
+    
+        if @listing.update(listing_params)
+          redirect_to @listing
+        else
+          render :edit
+        end
+      end
+
+      def destroy
+        @listing = Listing.find(params[:id])
+        @listing.destroy
+    
+        redirect_to root_path
+      end
+
 
       private
       def listing_params

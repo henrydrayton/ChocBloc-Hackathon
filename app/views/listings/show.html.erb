@@ -1,5 +1,13 @@
+
+
 <h3><%= @listing.name %></h3>
 <h4><%= @listing.price %></h4>
 <h4><%= @listing.age %></h4>
 <h4><%= @listing.description %></h4>
 
+<ul>
+  <li><%= link_to "Edit", edit_listing_path(@listing) %></li>
+  <li><%= link_to "Destroy", listing_path(@listing),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+</ul>

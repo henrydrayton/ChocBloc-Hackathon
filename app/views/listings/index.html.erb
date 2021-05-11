@@ -1,6 +1,8 @@
 <h1>Welcome</h1>
 <h3>ChocBloc - Your one stop chocolate shop!</h3>
 
+<%= link_to "New Listing", new_listing_path %>
+
 <h2>Listings</h2>
      <ul>
          <% @listings.each do |listing|%>
@@ -16,6 +18,9 @@
             </li>
         <% end %>     
     </ul>
+
+
+
 
 
 
