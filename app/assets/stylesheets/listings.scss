@@ -1,3 +1,11 @@
 // Place all the styles related to the Listings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.jumbotron {
+  h1 {
+    font-size: 5rem;
+  }
+  padding: 30vh 4rem;
+  background: linear-gradient(to bottom, #FFC3A0, #FFAFBD);
+}
