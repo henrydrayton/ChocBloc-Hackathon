@@ -1,5 +1,4 @@
 class ListingsController < ApplicationController
-    belongs_to :user
 
     def index
         @listings = Listing.all.reverse
