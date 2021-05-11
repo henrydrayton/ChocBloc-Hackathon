@@ -1,27 +1,21 @@
 <%= form_with model: listing do |form| %>
-   
-    <div>
-      <%= form.label :name %><br>
-      <%= form.text_field :name %>
-      <% listing.errors.full_messages_for(:name).each do |message| %>
-        <div><%= message %></div>
-      <% end %>
-    </div>
+  <div id="error_explanation">
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% listing.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
 
-    <div class= "field">
-        <%= form.label :image %>
-        <%= form.file_field :image %>
-    </div>
+  <div class="field">
+    <%= form.label :price %><br>
+    <%= form.text_area :price%><br>
+    <% listing.errors.full_messages_for(:price).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
 
-    <div>
-      <%= form.label :price %><br>
-      <%= form.text_area :price%><br>
-      <% listing.errors.full_messages_for(:price).each do |message| %>
-        <div><%= message %></div>
-      <% end %>
-    </div>
-
-    <div>
+  <div class="field">
     <%= form.label :age %><br>
     <%= form.text_area :age%><br>
     <% listing.errors.full_messages_for(:age).each do |message| %>
@@ -29,15 +23,20 @@
     <% end %>
   </div>
 
-  <div>
+  <div class="field">
   <%= form.label :description %><br>
   <%= form.text_area :description%><br>
-  <% listing.full_messages_for(:description).each do |message| %>
+  <% listing.errors.full_messages_for(:description).each do |message| %>
     <div><%= message %></div>
   <% end %>
-</div>
-  
-    <div>
-      <%= form.submit %>
-    </div>
-  <% end %>
+  </div>
+
+  <div class="field">
+      <%= form.label :image %>
+      <%= form.file_field :image %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
