@@ -15,9 +15,19 @@
       <div class="field">
         <div class="row">
           <div class="col-md-4 offset-4">
+            <%#= f.label :first_name%><br />
+            <p class="lead">First Name</p>
+            <%= f.text_field :first_name, :class => 'form-control', autofocus: true%>
+          </div>
+          <div class="col-md-4 offset-4">
+            <%#= f.label :last_name%><br />
+            <p class="lead">Last Name</p>
+            <%= f.text_field :last_name, :class => 'form-control'%>
+          </div>
+          <div class="col-md-4 offset-4">
             <%#= f.label :email%><br />
             <p class="lead">Email</p>
-            <%= f.email_field :email, :class => 'form-control', autofocus: true, autocomplete: "email" %>
+            <%= f.email_field :email, :class => 'form-control', autocomplete: "email" %>
           </div>
         </div>
     </div>
