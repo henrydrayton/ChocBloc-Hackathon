@@ -16,3 +16,24 @@ a.anchor {
   top: -2rem;
   visibility: hidden;
 }
+
+.padd {
+  // padding-left: 14rem;
+  // margin-top: 10rem;
+  // display: flex;
+  height: 20vw;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.container {
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
+  
+}
+
+.list {
+  list-style-type: none;
+ color: black;
+}
