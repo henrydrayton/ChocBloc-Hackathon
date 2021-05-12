@@ -2,16 +2,18 @@
   <%= link_to "ChocBloc", root_path, class: "navbar-brand mx-4" %>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Profile</a>
-      </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Favourites</a>
       </li>
     </ul>
   </div>
     
-  <% if current_user %> 
+  <% if current_user %>
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="<%= "/users/#{current_user.id}" if current_user %>"> <%=[current_user.first_name, current_user.last_name].join(' ')%> </a>
+      </li>
+    </ul>
     <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-outline-light mx-4 my-2 my-sm-0 navbar-right" %>
   <% else %> 
     <%= button_to 'Sign In', new_user_session_path, class: "btn btn-outline-light mx-4 my-2 my-sm-0 navbar-right", type: "submit" %>
