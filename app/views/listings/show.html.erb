@@ -7,37 +7,41 @@
   </div>
 </div>
 
+
 <div class="container">
  <div class="row align-items-start">
+  <%= image_tag asset_path(url_for(@listing.image)), class: 'listing padd col' %>
+    <div class="col form-control">
+    <h4>Price</h4>
+    <p><%= @listing.price %></hp>
+  </div>
 
-<%= image_tag asset_path(url_for(@listing.image)), class: 'listing padd col' %>
-
-<div class="col">
-<h4>Price</h4>
-<p class="col"><%= @listing.price %></hp>
+<div class="col form-control">
+  <h4>Age</h4>
+  <p><%= @listing.age %></p>
 </div>
 
-<div class="col">
-<h4>Age</h4>
-<p class="col"><%= @listing.age %></p>
-</div>
-
-<div class="col">
-<h4 class="col">Description</h4>
-<p class="col"><%= @listing.description %></p>
+<div class="col form-control">
+  <h4>Description</h4>
+  <p><%= @listing.description %></p>
 </div>
 </div>
 </div>
 
-
-<div class="container">
 <div class="form-group py-2">
-<ul>
-  <li><%= link_to "Edit", edit_listing_path(@listing) %></li>
-  <li><%= button_to "Destroy", listing_path(@listing),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %></li>
-</ul>
+  <div class="container">
+
+    <ul>
+      <div class=" list btn btn-warning btn-lg btn-block">
+        <li><%= link_to "Edit",  edit_listing_path(@listing) %></li>
+        </div>
+        <div class= "list btn btn-light btn-lg btn-block">
+        <li><%= link_to "Destroy", listing_path(@listing),
+                        method: :delete,
+                        data: { confirm: "Are you sure?" } %></li>
+    </ul>
+  </div>
+</div>
 </div>
 </div>
 
