@@ -11,7 +11,16 @@
 }
 
 .padd {
-  padding-left: 4rem;
-  display: flex;
-  
+  // padding-left: 14rem;
+  // margin-top: 10rem;
+  // display: flex;
+  height: 20vw;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.container {
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
 }
