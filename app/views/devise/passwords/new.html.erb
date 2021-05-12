@@ -1,15 +1,31 @@
-<h2>Forgot your password?</h2>
+<div class="form-group py-2">
+  <div class="container">
+    <div class="py-5 text-center">
+      <h2>Forgot your password?</h2>
+      <p class="lead">Please enter your email below</p>
+    </div>
+  </div>
+</div>
 
+<div class="container text-center justify-content-center align-items-center" p-3 my-3 border>
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-
+  <div class="form-group py-2">
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <div class="row">
+          <div class="col-md-4 offset-4">
+    <%#= f.label :email %><br />
+    <p class="lead">Email</p>
+    <%= f.email_field :email,:class => 'form-control', autofocus: true, autocomplete: "email" %>
   </div>
+  </div>
+  </div>
+</div>
 
+<div class="form-group py-2">
   <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
+    <%= f.submit "Send me reset password instructions", :class => 'btn btn-primary btn-lg btn-block' %>
+  </div>
   </div>
 <% end %>
 
