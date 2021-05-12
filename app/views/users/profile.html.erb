@@ -1,0 +1,16 @@
+<section class="user-jumbo text-center">
+    <div class="container">
+        <h2 class="jumbotron-heading"><%= @user_profile.first_name %>'s Listings</h2>
+        <%= link_to "Get in Touch", "mailto:#{@user_profile.email}", class: "btn btn-primary my-2", style: "background-color: #3401C5;"%>
+    </div>
+</section>
+
+<section id="Listings">
+    <div class="album py-5 bg-light jumbo-shadow">
+    <div class="container">
+        <div class="row">
+            <%= render "users/card", listings: @user_listings %>
+        </div>
+    </div>
+</div>
+</section>
