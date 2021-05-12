@@ -10,18 +10,18 @@
 
 <br>
 
-#### Heroku Link
+### Heroku Link
 https://chocbloc.herokuapp.com/
 
 <br>
 
-#### Time Period
+### Time Period
 2 Days
 
-#### Purpose 
+### Purpose 
 Create a marketplace to facilitate transactions between fine chocolate collectors.
 
-#### Requirements 
+### Requirements 
 
 <ul>
     <li> CRUD app (create, read, update, delete)</li>
@@ -32,7 +32,7 @@ Create a marketplace to facilitate transactions between fine chocolate collector
          <li> Git workflow: collaborate, working on branches, pull requests, merging</li>
 </ul>
 
-#### How to
+### How to
 <ul>
     <li> Pair program (2 per team)</li>
      <li> Work on basics of the app together: user stories, ERD, basic</li>
@@ -43,12 +43,12 @@ methods, basic styling, deployment, etc(devise)</li>
 </ul>
 
 
-#### Entity Relationship Diagram 
+### Entity Relationship Diagram 
 
 
 ![ERD](/images/ERD.png "ERD")
 
-#### User Stories
+### User Stories
 
 As a <strong>buyer</strong>, I want to view all available chocos on the market.
 
@@ -73,12 +73,12 @@ As a <strong>seller</strong> I want to be able to edit that listing.
 
 As a <strong>seller</strong> I want to be able to remove a listing. 
 
-#### Wireframes
+### Wireframes
 
 
 ![wireframes](/images/wireframes.png "wireframes")
 
-#### Renders
+### Renders
 
 ![wireframes](/images/group_1.png "wireframes")
 ![wireframes](/images/group_2.png "wireframes")
